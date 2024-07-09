@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px; /* Add padding for more space on the left and right */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-container .logo img {
+    height: 70px; /* Increase the logo size */
+    margin-right: 20px; /* Adjust spacing between the logo and the text */
+}
+
+.header-container .logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-container .logo-text h1 {
+    margin: 0;
+    font-size: 2em; /* Increase font size */
+    color: #fff; /* Ensure it matches your header text color */
+}
+
+.header-container .byline {
+    font-size: 0.9em; /* Slightly smaller font size for byline */
+    color: #ccc;
+    font-style: italic;
+    margin-top: 1px; /* Adjust to position correctly below the h1 */
+    text-align: right; /* Align the byline to the right */
+}
+
+.header-container .inactive, .footer-links .inactive {
+    pointer-events: none; /* Disable clicking */
+    color: #ccc; /* Change color to indicate inactive state */
+    cursor: default; /* Change cursor to default arrow */
+}
+
+.header-container .inactive:hover, .footer-links .inactive:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+header nav {
+    align-self: flex-start; /* Ensure nav aligns with the top of the header */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-content {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.banner-content h2 {
+    font-size: 3em;
+    margin: 0;
+    color: #003366;
+}
+
+.banner-content p {
+    font-size: 1.5em;
+    color: #003366;
+}
+
+.banner-content .cta-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.introduction, .services {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.introduction {
+    background: linear-gradient(to right, #f9f9f9, #fff);
+}
+
+.introduction h2 {
+    font-size: 2.5em;
+    color: #003366;
+}
+
+.introduction p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.services {
+    background-color: #d8e4e1; /* Darker grey-green background color */
+}
+
+.services h2 {
+    font-size: 2.5em;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.service-item {
+    background-color: #b0c7c3; /* Light grey-green background color for the cards */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.service-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    color: #c97b5a; /* Softer terracotta color for the headings */
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-links a, .social-media a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover, .contact-info a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+.social-media {
+    margin-top: 20px; /* Adjust this value to move the social media icons lower */
+}
+
+.social-media a {
+    margin-right: 10px; /* Optional: Adjust spacing between icons */
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle; /* Ensure icons are vertically aligned */
+}
+
+.contact-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.contact-container h2 {
+    font-size: 2.5em;
+    color: #003366;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.about-section {
+    background-color: #d8e4e1; /* Light grey-green background color */
+    padding: 50px 0;
+}
+
+.about-section h2, .about-section h3 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-section p, .about-section ul {
+    font-size: 1.2em;
+    color: #555;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.about-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-section ul li {
+    margin-bottom: 10px;
+}
