@@ -7,6 +7,10 @@ body {
     color: #333;
 }
 
+body.contact-page {
+    background-color: #d8e4e1; /* Grey-green background color */
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -14,7 +18,7 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
+    color: #b0c7c3; /* Grey-green color for header text */
     padding: 10px 20px; /* Add padding for more space on the left and right */
 }
 
@@ -42,12 +46,12 @@ header {
 .header-container .logo-text h1 {
     margin: 0;
     font-size: 2em; /* Increase font size */
-    color: #fff; /* Ensure it matches your header text color */
+    color: #b0c7c3; /* Grey-green color for header text */
 }
 
 .header-container .byline {
     font-size: 0.9em; /* Slightly smaller font size for byline */
-    color: #ccc;
+    color: #b0c7c3; /* Grey-green color for header text */
     font-style: italic;
     margin-top: -5px; /* Adjust to position correctly below the h1 */
     text-align: right; /* Align the byline to the right */
@@ -69,7 +73,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: #b0c7c3; /* Grey-green color for header links */
     text-decoration: none;
 }
 
@@ -122,13 +126,10 @@ header nav ul li a {
     font-size: 1.2em;
 }
 
-.introduction, .services {
+.introduction {
+    background-color: #e8f0ef; /* Light grey-green background color */
     padding: 50px 0;
     text-align: center;
-}
-
-.introduction {
-    background: linear-gradient(to right, #f9f9f9, #fff);
 }
 
 .introduction h2 {
@@ -142,6 +143,8 @@ header nav ul li a {
 }
 
 .services {
+    padding: 50px 0;
+    text-align: center;
     background-color: #d8e4e1; /* Darker grey-green background color */
 }
 
@@ -185,13 +188,13 @@ header nav ul li a {
 
 footer {
     background-color: #333;
-    color: #fff;
+    color: #b0c7c3; /* Grey-green color for footer text */
     padding: 20px 0;
     text-align: center;
 }
 
-.footer-links a, .social-media a {
-    color: #fff;
+.footer-links a, .social-media a, .contact-info a {
+    color: #b0c7c3; /* Grey-green color for footer links */
     margin: 0 10px;
     text-decoration: none;
 }
@@ -219,16 +222,17 @@ footer {
     margin: 0 auto;
     padding: 50px 0;
     text-align: center;
+    background-color: #d8e4e1; /* Grey-green background color for contact form */
+    border-radius: 10px;
 }
 
-.contact-container h2 {
-    font-size: 2.5em;
+.contact-container h1 {
     color: #003366;
     margin-bottom: 20px;
 }
 
 .contact-form {
-    background-color: #f9f9f9;
+    background-color: #d8e4e1; /* Grey-green background color for contact form */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -251,6 +255,7 @@ footer {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
+    background-color: #e8f0ef; /* Lighter grey-green background color for input fields */
 }
 
 .contact-form button {
