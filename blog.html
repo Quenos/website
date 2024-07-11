@@ -15,15 +15,17 @@
 </head>
 <body onload="includeHTML(); fetchBlogPosts(1);">
     <header w3-include-html="header.html"></header>
-    <main>
-        <section class="blog-overview">
-            <div class="container">
-                <h1>Quenos Technology Blog</h1>
-                <div id="blog-content">
-                    <!-- Blog posts will be dynamically inserted here -->
+    <main class="blog-main">
+        <div class="blog-background">
+            <section class="blog-overview">
+                <div class="container">
+                    <h1>Quenos Technology Blog</h1>
+                    <div id="blog-content">
+                        <!-- Blog posts will be dynamically inserted here -->
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
     <footer w3-include-html="footer.html"></footer>
 </body>

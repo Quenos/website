@@ -1,6 +1,13 @@
+.blog-main {
+    background-color: #d8e4e1; /* Grey-green background color for the whole area */
+}
+
+.blog-background {
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+}
+
 .blog-overview {
     padding: 50px 0;
-    background-color: #d8e4e1; /* Grey-green background color for the whole area */
 }
 
 .blog-posts-container {
