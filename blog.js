@@ -25,7 +25,7 @@ function fetchBlogPosts() {
                 article.innerHTML = `
                     <h2>${post.attributes.Title}</h2>
                     <p class="blog-date">Published on ${new Date(post.attributes.publishedAt).toLocaleDateString()}</p>
-                    <div class="blog-content">${post.attributes.Content}</div>
+                    <div class="blog-content">${marked.parse(post.attributes.Content)}</div>
                 `;
                 blogContent.appendChild(article);
             });
