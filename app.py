@@ -11,12 +11,22 @@ STRAPI_TOKEN = '5548d7aa99974cc013b6c34b718c14028b2f22b962471776513b9e4eaea96ff1
 def index():
     return send_from_directory('.', 'index.html')
 
-@app.route('/api/test', methods=['GET'])
+@app.route('/api/blogs', methods=['GET'])
 def get_blog_posts():
+    page = request.args.get('page', 1, type=int)
+    page_size = request.args.get('pageSize', 10, type=int)
     headers = {
         'Authorization': f'Bearer {STRAPI_TOKEN}'
     }
-    response = requests.get(f'{STRAPI_URL}/api/blog-posts', headers=headers)
+    response = requests.get(f'{STRAPI_URL}/api/blog-posts?pagination[page]={page}&pagination[pageSize]={page_size}', headers=headers)
+    return jsonify(response.json())
+
+@app.route('/api/blogs/<int:post_id>', methods=['GET'])
+def get_blog_post(post_id):
+    headers = {
+        'Authorization': f'Bearer {STRAPI_TOKEN}'
+    }
+    response = requests.get(f'{STRAPI_URL}/api/blog-posts/{post_id}', headers=headers)
     return jsonify(response.json())
 
 @app.route('/api/blog-posts', methods=['POST'])
