@@ -35,6 +35,9 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
     margin-bottom: 20px;  /* Reduced space between the cards and pagination */
+    max-width: 800px;  /* Limit the maximum width to accommodate 2 cards */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blog-post {
