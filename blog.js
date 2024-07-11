@@ -39,7 +39,7 @@ function fetchBlogPosts(page = 1) {
                         <p class="blog-date">Published on ${new Date(post.attributes.publishedAt).toLocaleDateString()}</p>
                         <p class="blog-summary">${post.attributes.Summary}</p>
                     </div>
-                    <a href="#" class="read-more-link" onclick="showFullPost(${post.id}); return false;">read more</a>
+                    <a href="#" class="read-more-link" onclick="showFullPost(${post.id}); return false;">read more...</a>
                 `;
                 postsContainer.appendChild(article);
             });
