@@ -25,13 +25,19 @@ function createBlogPost(event) {
         },
         body: JSON.stringify(data),
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
+        console.log('Success:', data);
         document.getElementById('response-message').textContent = 'Blog post created successfully!';
         document.getElementById('create-blog-form').reset();
     })
     .catch((error) => {
-        document.getElementById('response-message').textContent = 'Error creating blog post. Please try again.';
         console.error('Error:', error);
+        document.getElementById('response-message').textContent = `Error creating blog post: ${error.message}. Please try again.`;
     });
 }

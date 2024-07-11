@@ -17,8 +17,13 @@ def blog_posts():
         return jsonify(response.json())
     elif request.method == 'POST':
         data = request.json
-        response = requests.post(f'{STRAPI_URL}/api/blog-posts', json=data)
-        return jsonify(response.json()), response.status_code
+        try:
+            response = requests.post(f'{STRAPI_URL}/api/blog-posts', json=data)
+            response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
+            return jsonify(response.json()), response.status_code
+        except requests.exceptions.RequestException as e:
+            app.logger.error(f"Error creating blog post: {str(e)}")
+            return jsonify({"error": str(e)}), 500
 
 @app.route('/<path:path>')
 def serve_file(path):
