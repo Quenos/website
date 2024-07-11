@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog Post - Quenos Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/create_blog.css">
+    <script src="include.js"></script>
+    <script src="create_blog.js"></script>
+</head>
+<body onload="includeHTML()">
+    <header w3-include-html="header.html"></header>
+    <main>
+        <div class="create-blog-container">
+            <h1>Create a New Blog Post</h1>
+            <form id="create-blog-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="summary">Summary:</label>
+                <textarea id="summary" name="summary" required></textarea>
+
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" required></textarea>
+
+                <button type="submit">Create Post</button>
+            </form>
+            <p id="response-message"></p>
+        </div>
+    </main>
+    <footer w3-include-html="footer.html"></footer>
+</body>
+</html>
