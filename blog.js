@@ -6,7 +6,7 @@ let currentPage = 1;
 const postsPerPage = 10;
 
 function fetchBlogPosts(page = 1) {
-    fetch(`http://localhost:5000/api/blogs?page=${page}&pageSize=${postsPerPage}`, {
+    fetch(`http://localhost:1337/api/blogs?pagination[page]=${page}&pagination[pageSize]=${postsPerPage}`, {
         headers: {
             'Authorization': `Bearer ${STRAPI_TOKEN}`
         }
@@ -53,7 +53,7 @@ function fetchBlogPosts(page = 1) {
 }
 
 function showFullPost(postId) {
-    fetch(`http://localhost:5000/api/blogs/${postId}`, {
+    fetch(`http://localhost:1337/api/blogs/${postId}`, {
         headers: {
             'Authorization': `Bearer ${STRAPI_TOKEN}`
         }
