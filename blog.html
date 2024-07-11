@@ -8,20 +8,18 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/blog.css">
     <script src="include.js"></script>
     <script src="blog.js"></script>
 </head>
-<body onload="includeHTML()">
+<body onload="includeHTML(); fetchBlogPosts();">
     <header w3-include-html="header.html"></header>
     <main>
         <section class="blog-overview">
             <div class="container">
                 <h1>Quenos Technology Blog</h1>
-                <div class="blog-grid">
+                <div id="blog-content">
                     <!-- Blog posts will be dynamically inserted here -->
-                </div>
-                <div class="pagination">
-                    <!-- Pagination will be implemented later -->
                 </div>
             </div>
         </section>
