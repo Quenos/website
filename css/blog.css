@@ -170,14 +170,15 @@
 .read-more-link {
     align-self: flex-end;
     margin-top: auto;
-    color: #007BFF;
+    color: #000000;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.3s ease;
+    font-size: 0.9em;
 }
 
 .read-more-link:hover {
-    color: #0056b3;
+    color: #333333;
     text-decoration: underline;
 }
 
