@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function fetchBlogPosts() {
-    fetch('/api/blog-posts')
+    fetch('/api/test')
         .then(response => response.json())
         .then(data => {
             const blogGrid = document.querySelector('.blog-grid');
