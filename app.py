@@ -4,7 +4,7 @@ import requests
 
 app = Flask(__name__, static_folder='.')
 
-STRAPI_URL = 'http://localhost:1337'  # Update this with your Strapi URL
+STRAPI_URL = 'http://localhost:1337'  # This is the default Strapi URL
 
 @app.route('/')
 def index():
