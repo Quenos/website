@@ -167,20 +167,18 @@
     flex-grow: 1;
 }
 
-.read-more-button {
+.read-more-link {
     align-self: flex-end;
     margin-top: auto;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    color: #007BFF;
+    text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.read-more-button:hover {
-    background-color: #0056b3;
+.read-more-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }
 
 .blog-post::after {
