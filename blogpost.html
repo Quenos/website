@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quenos Technology</title>
+    <title>The Future of Autonomous Vehicles - Quenos Technology</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <script src="include.js"></script>
 </head>
 <body onload="includeHTML()">
@@ -13,36 +15,24 @@
     <main>
         <article class="blog-post">
             <div class="container">
-                <h1 id="blog-title">Blog Post Title</h1>
-                <p class="blog-meta">Published on <span id="blog-date">July 15, 2024</span> by <span id="blog-author">Author Name</span></p>
-                <img id="blog-image" src="blog-image-1.jpg" alt="Blog post main image" class="blog-main-image">
-                <div id="blog-content">
-                    <!-- Blog post content will be dynamically inserted here -->
-                </div>
-                <div class="blog-navigation">
-                    <a href="#" id="prev-post">← Previous Post</a>
-                    <a href="#" id="next-post">Next Post →</a>
-                </div>
+                <h1>The Future of Autonomous Vehicles</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+
+                <h2>Key Advancements</h2>
+                <ol>
+                    <li><strong>Sensor Technology:</strong> Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</li>
+                    <li><strong>Artificial Intelligence:</strong> Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue.</li>
+                    <li><strong>Regulatory Frameworks:</strong> Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus.</li>
+                </ol>
+
+                <h2>Challenges Ahead</h2>
+                <p>In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu.</p>
+
+                <h2>Conclusion</h2>
+                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna.</p>
             </div>
         </article>
     </main>
     <footer w3-include-html="footer.html"></footer>
-    <script>
-        // JavaScript to load blog post content dynamically
-        // This is a placeholder and should be replaced with actual implementation
-        function loadBlogPost(id) {
-            // Fetch blog post data and update the content
-            // This is where you'd typically make an AJAX request to your server
-            console.log("Loading blog post with ID:", id);
-        }
-
-        // Get the blog post ID from the URL query parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const postId = urlParams.get('id');
-
-        if (postId) {
-            loadBlogPost(postId);
-        }
-    </script>
 </body>
 </html>
