@@ -6,7 +6,7 @@ let currentPage = 1;
 const postsPerPage = 10;
 
 function fetchBlogPosts(page = 1) {
-    fetch(`http://localhost:1337/api/blogs?pagination[page]=${page}&pagination[pageSize]=${postsPerPage}`, {
+    fetch(`http://localhost:1337/api/blogs?pagination[page]=${page}&pagination[pageSize]=${postsPerPage}&populate=*`, {
         headers: {
             'Authorization': `Bearer ${STRAPI_TOKEN}`
         }
@@ -25,8 +25,14 @@ function fetchBlogPosts(page = 1) {
             data.data.forEach(post => {
                 const article = document.createElement('article');
                 article.className = 'blog-post';
+                let thumbnailHtml = '';
+                if (post.attributes.thumbnail && post.attributes.thumbnail.data) {
+                    thumbnailHtml = `<img src="http://localhost:1337${post.attributes.thumbnail.data.attributes.url}" alt="${post.attributes.Title}" class="blog-thumbnail">`;
+                }
                 article.innerHTML = `
+                    ${thumbnailHtml}
                     <h2>${post.attributes.Title}</h2>
+                    <p class="blog-date">Published on ${new Date(post.attributes.publishedAt).toLocaleDateString()}</p>
                     <p class="blog-summary">${post.attributes.Summary}</p>
                     <button onclick="showFullPost(${post.id})">Read More</button>
                 `;
@@ -61,8 +67,13 @@ function showFullPost(postId) {
     .then(response => response.json())
     .then(data => {
         const blogContent = document.getElementById('blog-content');
+        let thumbnailHtml = '';
+        if (data.data.attributes.thumbnail && data.data.attributes.thumbnail.data) {
+            thumbnailHtml = `<img src="http://localhost:1337${data.data.attributes.thumbnail.data.attributes.url}" alt="${data.data.attributes.Title}" class="blog-thumbnail">`;
+        }
         blogContent.innerHTML = `
             <article class="blog-post full-post">
+                ${thumbnailHtml}
                 <h2>${data.data.attributes.Title}</h2>
                 <p class="blog-date">Published on ${new Date(data.data.attributes.publishedAt).toLocaleDateString()}</p>
                 <div class="blog-content">${marked.parse(data.data.attributes.Content)}</div>

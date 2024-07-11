@@ -80,7 +80,14 @@
     text-decoration: underline;
 }
 
-.blog-content img {
+.blog-content img,
+.blog-thumbnail {
     max-width: 100%;
     height: auto;
+    margin-bottom: 15px;
+}
+
+.blog-thumbnail {
+    max-height: 200px;
+    object-fit: cover;
 }
