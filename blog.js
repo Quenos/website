@@ -23,10 +23,9 @@ function fetchBlogPosts() {
                 const article = document.createElement('article');
                 article.className = 'blog-post';
                 article.innerHTML = `
-                    <h2>${post.attributes.title}</h2>
+                    <h2>${post.attributes.Title}</h2>
                     <p class="blog-date">Published on ${new Date(post.attributes.publishedAt).toLocaleDateString()}</p>
-                    <div class="blog-summary">${post.attributes.summary}</div>
-                    <div class="blog-content">${post.attributes.content}</div>
+                    <div class="blog-content">${post.attributes.Content}</div>
                 `;
                 blogContent.appendChild(article);
             });
