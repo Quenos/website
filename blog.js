@@ -33,11 +33,13 @@ function fetchBlogPosts(page = 1) {
                     thumbnailHtml = `<img src="http://localhost:1337${post.attributes.thumbnail.data.attributes.url}" alt="${post.attributes.Title}" class="blog-thumbnail">`;
                 }
                 article.innerHTML = `
-                    ${thumbnailHtml}
-                    <h2>${post.attributes.Title}</h2>
-                    <p class="blog-date">Published on ${new Date(post.attributes.publishedAt).toLocaleDateString()}</p>
-                    <p class="blog-summary">${post.attributes.Summary}</p>
-                    <button onclick="showFullPost(${post.id})">Read More</button>
+                    <div class="blog-post-content">
+                        ${thumbnailHtml}
+                        <h2>${post.attributes.Title}</h2>
+                        <p class="blog-date">Published on ${new Date(post.attributes.publishedAt).toLocaleDateString()}</p>
+                        <p class="blog-summary">${post.attributes.Summary}</p>
+                    </div>
+                    <button class="read-more-button" onclick="showFullPost(${post.id})">Read More</button>
                 `;
                 postsContainer.appendChild(article);
             });

@@ -74,6 +74,9 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .blog-post:hover {
@@ -158,6 +161,26 @@
     float: left;
     margin-right: 15px;
     margin-bottom: 15px;
+}
+
+.blog-post-content {
+    flex-grow: 1;
+}
+
+.read-more-button {
+    align-self: flex-end;
+    margin-top: auto;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: #0056b3;
 }
 
 .blog-post::after {
