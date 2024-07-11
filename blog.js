@@ -22,6 +22,9 @@ function fetchBlogPosts(page = 1) {
         blogContent.innerHTML = ''; // Clear existing content
 
         if (data.data && data.data.length > 0) {
+            const postsContainer = document.createElement('div');
+            postsContainer.className = 'blog-posts-container';
+            
             data.data.forEach(post => {
                 const article = document.createElement('article');
                 article.className = 'blog-post';
@@ -36,8 +39,10 @@ function fetchBlogPosts(page = 1) {
                     <p class="blog-summary">${post.attributes.Summary}</p>
                     <button onclick="showFullPost(${post.id})">Read More</button>
                 `;
-                blogContent.appendChild(article);
+                postsContainer.appendChild(article);
             });
+            
+            blogContent.appendChild(postsContainer);
 
             // Add pagination controls
             const paginationControls = document.createElement('div');

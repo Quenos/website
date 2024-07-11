@@ -2,12 +2,20 @@
     padding: 50px 0;
 }
 
+.blog-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .blog-post {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
+    width: calc(50% - 10px); /* Two cards per row with a small gap */
+    box-sizing: border-box;
 }
 
 .blog-post h2 {
