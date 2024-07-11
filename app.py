@@ -23,7 +23,13 @@ def blog_posts():
             return jsonify(response.json()), response.status_code
         except requests.exceptions.RequestException as e:
             app.logger.error(f"Error creating blog post: {str(e)}")
-            return jsonify({"error": str(e)}), 500
+            error_message = str(e)
+            if response.status_code == 500:
+                try:
+                    error_message = response.json().get('error', {}).get('message', str(e))
+                except ValueError:
+                    pass
+            return jsonify({"error": error_message}), response.status_code or 500
 
 @app.route('/<path:path>')
 def serve_file(path):
