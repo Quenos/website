@@ -175,6 +175,8 @@
     cursor: pointer;
     transition: color 0.3s ease;
     font-size: 0.9em;
+    font-style: italic;
+    padding-top: 10px;
 }
 
 .read-more-link:hover {
