@@ -1,13 +1,33 @@
 .blog-main {
     background-color: #d8e4e1; /* Grey-green background color for the whole area */
+    min-height: 100vh; /* Ensure the main content area covers the full viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-background {
-    min-height: 100vh; /* Ensure the background covers the full viewport height */
+    flex: 1; /* Allow the background to grow and fill available space */
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-overview {
+    flex: 1; /* Allow the overview to grow and fill available space */
     padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-overview .container {
+    flex: 1; /* Allow the container to grow and fill available space */
+    display: flex;
+    flex-direction: column;
+}
+
+#blog-content {
+    flex: 1; /* Allow the blog content to grow and fill available space */
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-posts-container {
