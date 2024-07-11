@@ -30,9 +30,9 @@
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%;
+    width: calc(100% - 20px); /* Subtract 20px to account for padding */
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 0 10px 20px 10px; /* Add left and right margin */
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
