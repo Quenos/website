@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quenos Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="include.js"></script>
+</head>
+<body onload="includeHTML()">
+    <header w3-include-html="header.html"></header>
+    <main>
+        <section class="blog-overview">
+            <div class="container">
+                <h1>Quenos Technology Blog</h1>
+                <div class="blog-grid">
+                    <!-- Sample blog post entries -->
+                    <article class="blog-post-card">
+                        <img src="blog-thumbnail-1.jpg" alt="Blog post thumbnail" class="blog-thumbnail">
+                        <h2><a href="blogpost.html?id=1">Innovations in Automotive Safety</a></h2>
+                        <p class="blog-date">Published on July 15, 2024</p>
+                        <p class="blog-summary">Exploring the latest advancements in automotive safety technology and their impact on the industry.</p>
+                    </article>
+                    <article class="blog-post-card">
+                        <img src="blog-thumbnail-2.jpg" alt="Blog post thumbnail" class="blog-thumbnail">
+                        <h2><a href="blogpost.html?id=2">Machine Learning in Functional Safety</a></h2>
+                        <p class="blog-date">Published on July 1, 2024</p>
+                        <p class="blog-summary">How machine learning is revolutionizing functional safety practices in automotive systems.</p>
+                    </article>
+                    <!-- Add more blog post entries as needed -->
+                </div>
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">Next</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer w3-include-html="footer.html"></footer>
+</body>
+</html>

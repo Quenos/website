@@ -1,0 +1,43 @@
+.services {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #d8e4e1; /* Darker grey-green background color */
+}
+
+.services h2 {
+    font-size: 2.5em;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.service-item {
+    background-color: #b0c7c3; /* Light grey-green background color for the cards */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.service-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    color: #c97b5a; /* Softer terracotta color for the headings */
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1em;
+    color: #555;
+}

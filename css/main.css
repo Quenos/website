@@ -1,0 +1,15 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+body.contact-page {
+    background-color: #d8e4e1; /* Grey-green background color */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}

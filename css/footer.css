@@ -1,0 +1,30 @@
+footer {
+    background-color: #333;
+    color: #b0c7c3; /* Grey-green color for footer text */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-links a, .social-media a, .contact-info a {
+    color: #b0c7c3; /* Grey-green color for footer links */
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover, .contact-info a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+.social-media {
+    margin-top: 20px; /* Adjust this value to move the social media icons lower */
+}
+
+.social-media a {
+    margin-right: 10px; /* Optional: Adjust spacing between icons */
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle; /* Ensure icons are vertically aligned */
+}

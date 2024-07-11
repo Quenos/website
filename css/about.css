@@ -1,0 +1,27 @@
+.about-section {
+    background-color: #d8e4e1; /* Light grey-green background color */
+    padding: 50px 0;
+}
+
+.about-section h2, .about-section h3 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-section p, .about-section ul {
+    font-size: 1.2em;
+    color: #555;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.about-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-section ul li {
+    margin-bottom: 10px;
+}

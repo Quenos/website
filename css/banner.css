@@ -1,0 +1,38 @@
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-content {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.banner-content h2 {
+    font-size: 3em;
+    margin: 0;
+    color: #003366;
+}
+
+.banner-content p {
+    font-size: 1.5em;
+    color: #003366;
+}
+
+.banner-content .cta-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}

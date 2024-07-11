@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quenos Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="include.js"></script>
+</head>
+<body onload="includeHTML()">
+    <header w3-include-html="header.html"></header>
+    <main>
+        <article class="blog-post">
+            <div class="container">
+                <h1 id="blog-title">Blog Post Title</h1>
+                <p class="blog-meta">Published on <span id="blog-date">July 15, 2024</span> by <span id="blog-author">Author Name</span></p>
+                <img id="blog-image" src="blog-image-1.jpg" alt="Blog post main image" class="blog-main-image">
+                <div id="blog-content">
+                    <!-- Blog post content will be dynamically inserted here -->
+                </div>
+                <div class="blog-navigation">
+                    <a href="#" id="prev-post">← Previous Post</a>
+                    <a href="#" id="next-post">Next Post →</a>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer w3-include-html="footer.html"></footer>
+    <script>
+        // JavaScript to load blog post content dynamically
+        // This is a placeholder and should be replaced with actual implementation
+        function loadBlogPost(id) {
+            // Fetch blog post data and update the content
+            // This is where you'd typically make an AJAX request to your server
+            console.log("Loading blog post with ID:", id);
+        }
+
+        // Get the blog post ID from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id');
+
+        if (postId) {
+            loadBlogPost(postId);
+        }
+    </script>
+</body>
+</html>
