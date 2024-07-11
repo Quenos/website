@@ -1,5 +1,5 @@
 function fetchBlogPosts() {
-    fetch('/api/test')
+    fetch('/api/blogs')
         .then(response => response.json())
         .then(data => {
             const blogContent = document.getElementById('blog-content');
