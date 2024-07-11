@@ -1,7 +1,7 @@
 header {
     background-color: #333;
-    color: white;
-    padding: 10px 0;
+    color: #b0c7c3; /* Grey-green color for header text */
+    padding: 10px 20px; /* Add padding for more space on the left and right */
 }
 
 .header-container {
@@ -16,20 +16,31 @@ header {
 }
 
 .header-container .logo img {
-    height: 50px;
-    margin-right: 10px;
+    height: 70px; /* Increase the logo size */
+    margin-right: 20px; /* Adjust spacing between the logo and the text */
+}
+
+.header-container .logo-text {
+    display: flex;
+    flex-direction: column;
 }
 
 .header-container .logo-text h1 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 2em; /* Increase font size */
+    color: #b0c7c3; /* Grey-green color for header text */
 }
 
 .header-container .byline {
-    font-size: 0.9em;
-    color: #ccc;
+    font-size: 0.9em; /* Slightly smaller font size for byline */
+    color: #b0c7c3; /* Grey-green color for header text */
     font-style: italic;
-    margin-top: 5px;
+    margin-top: 5px; /* Adjust to position correctly below the h1 */
+    text-align: right; /* Align the byline to the right */
+}
+
+header nav {
+    align-self: flex-start; /* Ensure nav aligns with the top of the header */
 }
 
 header nav ul {
@@ -44,16 +55,16 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: white;
+    color: #b0c7c3; /* Grey-green color for header links */
     text-decoration: none;
 }
 
-.header-container .inactive {
-    pointer-events: none;
-    color: #ccc;
-    cursor: default;
+.header-container .inactive, .footer-links .inactive {
+    pointer-events: none; /* Disable clicking */
+    color: #ccc; /* Change color to indicate inactive state */
+    cursor: default; /* Change cursor to default arrow */
 }
 
-.header-container .inactive:hover {
-    text-decoration: none;
+.header-container .inactive:hover, .footer-links .inactive:hover {
+    text-decoration: none; /* Remove underline on hover */
 }
