@@ -1,6 +1,6 @@
 .blog-overview {
     padding: 50px 0;
-    background-color: #d8e4e1; /* Grey-green background color */
+    background-color: #d8e4e1; /* Grey-green background color for the whole area */
 }
 
 .blog-posts-container {
@@ -8,6 +8,14 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-bottom: 30px;  /* Add space between the cards and pagination */
+}
+
+.blog-post {
+    background-color: #e8f0ef; /* Lighter grey-green background color for the summary cards */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .pagination-controls {
