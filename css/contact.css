@@ -37,6 +37,7 @@
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
     background-color: #e8f0ef; /* Lighter grey-green background color for input fields */
+    resize: none; /* Prevent resizing */
 }
 
 .contact-form button {
