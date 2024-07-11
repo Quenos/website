@@ -31,12 +31,11 @@
 }
 
 .blog-posts-container {
-    background-color: #b0c7c3; /* Darker grey-green background color for the summary cards */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-    margin-bottom: 20px;  /* Reduced space between the cards and pagination */
-    max-width: 800px;  /* Limit the maximum width to accommodate 2 cards */
+    gap: 20px;
+    margin-bottom: 30px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -67,11 +66,18 @@
 }
 
 .blog-post {
-    background-color: #b0c7c3;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #b0c7c3;
+    border-radius: 10px;
+    padding: 25px;
     box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .blog-post h2 {
