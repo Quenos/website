@@ -88,9 +88,17 @@
 
 .blog-content img,
 .blog-thumbnail {
-    max-width: 100%;
+    max-width: 200px;
     height: auto;
+    float: left;
+    margin-right: 15px;
     margin-bottom: 15px;
+}
+
+.blog-post::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .blog-thumbnail {
