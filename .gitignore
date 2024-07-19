@@ -3,3 +3,4 @@
 strapi/
 .aider*
 /.env
+/node_modules/*

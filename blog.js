@@ -1,9 +1,4 @@
-// Load environment variables from .env file
-require('dotenv').config();
-
-// Read the STRAPI_TOKEN from the environment variable
-const STRAPI_TOKEN = process.env.STRAPI_TOKEN || '';
-
+const STRAPI_TOKEN = window.config.STRAPI_TOKEN || '';
 // Check if the token is available
 if (!STRAPI_TOKEN) {
     console.error('STRAPI_TOKEN is not set in the environment variables');
