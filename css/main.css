@@ -12,7 +12,14 @@ body.contact-page {
     background-color: #d8e4e1; /* Grey-green background color */
 }
 
+.services-container {
+    background: #d8e4e1;
+    width: 80%;
+    margin: 0 auto;
+}
+
 .container {
+    background: #e8f0ef;
     width: 80%;
     margin: 0 auto;
 }
@@ -33,7 +40,7 @@ main {
 }
 
 #latest-blog-post {
-    background-color: #ffffff;
+    background-color: #b0c7c3;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -60,6 +67,7 @@ main {
 
 /* Styles for the summary in the latest blog post */
 .summary {
+    background: #b0c7c3;
     margin-top: 15px;
 }
 
