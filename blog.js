@@ -102,3 +102,48 @@ function changePage(newPage) {
     currentPage = newPage;
     fetchBlogPosts(currentPage);
 }
+
+function fetchLatestBlogPost() {
+    fetch(`https://quenos.technology/api/blogs?pagination[page]=1&pagination[pageSize]=1&sort=publishedAt:desc&populate=*`, {
+        headers: {
+            'Authorization': `Bearer ${STRAPI_TOKEN}`
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.data && data.data.length > 0) {
+            const post = data.data[0];
+            const latestPostContainer = document.getElementById('latest-blog-post');
+            if (latestPostContainer) {
+                let thumbnailHtml = '';
+                if (post.attributes.thumbnail && post.attributes.thumbnail.data) {
+                    thumbnailHtml = `<img src="https://quenos.technology${post.attributes.thumbnail.data.attributes.url}" alt="${post.attributes.Title}" class="blog-thumbnail">`;
+                }
+                latestPostContainer.innerHTML = `
+                    <h3>${post.attributes.Title}</h3>
+                    ${thumbnailHtml}
+                    <p class="blog-date">Published on ${new Date(post.attributes.publishedAt).toLocaleDateString()}</p>
+                    <p class="blog-summary">${post.attributes.Summary}</p>
+                    <a href="blog.html" class="read-more-link">Read more...</a>
+                `;
+            }
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        const latestPostContainer = document.getElementById('latest-blog-post');
+        if (latestPostContainer) {
+            latestPostContainer.innerHTML = '<p>Error loading latest blog post. Please try again later.</p>';
+        }
+    });
+}
+
+// Call this function when the home page loads
+if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    fetchLatestBlogPost();
+}
