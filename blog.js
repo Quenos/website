@@ -8,7 +8,7 @@ let currentPage = 1;
 const postsPerPage = 10;
 
 function fetchBlogPosts(page = 1) {
-    fetch(`http://quenos.technology:1337/api/blogs?pagination[page]=${page}&pagination[pageSize]=${postsPerPage}&populate=*`, {
+    fetch(`https://quenos.technology:1337/api/blogs?pagination[page]=${page}&pagination[pageSize]=${postsPerPage}&populate=*`, {
         headers: {
             'Authorization': `Bearer ${STRAPI_TOKEN}`
         }
@@ -32,7 +32,8 @@ function fetchBlogPosts(page = 1) {
                 article.className = 'blog-post';
                 let thumbnailHtml = '';
                 if (post.attributes.thumbnail && post.attributes.thumbnail.data) {
-                    thumbnailHtml = `<img src="http://localhost:1337${post.attributes.thumbnail.data.attributes.url}" alt="${post.attributes.Title}" class="blog-thumbnail">`;
+                    thumbnailHtml = `<img src="https://quenos.technology:1337${post.attributes.thumbnail.data.attributes.url}" alt="${post.attributes.Title}"
+                    class="blog-thumbnail">`;
                 }
                 article.innerHTML = `
                     <div class="blog-post-content">
@@ -68,7 +69,7 @@ function fetchBlogPosts(page = 1) {
 }
 
 function showFullPost(postId) {
-    fetch(`http://quenos.technology:1337/api/blogs/${postId}`, {
+    fetch(`https://quenos.technology:1337/api/blogs/${postId}`, {
         headers: {
             'Authorization': `Bearer ${STRAPI_TOKEN}`
         }
@@ -78,7 +79,8 @@ function showFullPost(postId) {
         const blogContent = document.getElementById('blog-content');
         let thumbnailHtml = '';
         if (data.data.attributes.thumbnail && data.data.attributes.thumbnail.data) {
-            thumbnailHtml = `<img src="http://localhost:1337${data.data.attributes.thumbnail.data.attributes.url}" alt="${data.data.attributes.Title}" class="blog-thumbnail">`;
+            thumbnailHtml = `<img src="https://quenos.technology:1337${data.data.attributes.thumbnail.data.attributes.url}" alt="${data.data.attributes.Title}"
+            class="blog-thumbnail">`;
         }
         blogContent.innerHTML = `
             <article class="blog-post full-post">
