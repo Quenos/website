@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="css/introduction.css">
     <link rel="stylesheet" href="css/service.css">
     <script src="include.js"></script>
+    <script src="config.js"></script>
+    <script src="blog.js"></script>
 </head>
-<body onload="includeHTML()">
+<body onload="includeHTML(); fetchLatestBlogPost();">
     <header w3-include-html="header.html"></header>
     <main>
         <section class="banner">
