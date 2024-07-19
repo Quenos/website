@@ -1,6 +1,5 @@
 const STRAPI_TOKEN = window.config.STRAPI_TOKEN || '';
 // Check if the token is available
-console.log(STRAPI_TOKEN)
 if (!STRAPI_TOKEN) {
     console.error('STRAPI_TOKEN is not set in the environment variables');
 }
@@ -9,7 +8,7 @@ let currentPage = 1;
 const postsPerPage = 10;
 
 function fetchBlogPosts(page = 1) {
-    fetch(`http://127.0.0.1:1337/api/blogs`, {
+    fetch(`http://quenos.technology:1337/api/blogs?pagination[page]=${page}&pagination[pageSize]=${postsPerPage}&populate=*`, {
         headers: {
             'Authorization': `Bearer ${STRAPI_TOKEN}`
         }
@@ -69,7 +68,7 @@ function fetchBlogPosts(page = 1) {
 }
 
 function showFullPost(postId) {
-    fetch(`http://localhost:1337/api/blogs/${postId}`, {
+    fetch(`http://quenos.technology:1337/api/blogs/${postId}`, {
         headers: {
             'Authorization': `Bearer ${STRAPI_TOKEN}`
         }
