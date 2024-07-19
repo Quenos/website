@@ -1,3 +1,6 @@
+// Load environment variables from .env file
+require('dotenv').config();
+
 // Read the STRAPI_TOKEN from the environment variable
 const STRAPI_TOKEN = process.env.STRAPI_TOKEN || '';
 
