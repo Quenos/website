@@ -2,3 +2,4 @@
 /styleguides/
 strapi/
 .aider*
+/.env
