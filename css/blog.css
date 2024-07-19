@@ -1,8 +1,9 @@
 .blog-main {
     background-color: #d8e4e1; /* Grey-green background color for the whole area */
-    min-height: 65the vh; /* Ensure the main content area covers the full viewport height */
+    min-height: 65vh; /* Ensure the main content area covers the full viewport height */
     display: flex;
     flex-direction: column;
+    padding-bottom: 80px; /* Add padding to the bottom */
 }
 
 .blog-background {
