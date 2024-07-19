@@ -1,6 +1,10 @@
-// Assuming you have a way to securely store and retrieve the token
-// For example, you might have it in a separate config file or get it from the server
-const STRAPI_TOKEN = '';
+// Read the STRAPI_TOKEN from the environment variable
+const STRAPI_TOKEN = process.env.STRAPI_TOKEN || '';
+
+// Check if the token is available
+if (!STRAPI_TOKEN) {
+    console.error('STRAPI_TOKEN is not set in the environment variables');
+}
 
 let currentPage = 1;
 const postsPerPage = 10;
