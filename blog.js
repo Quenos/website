@@ -1,5 +1,6 @@
 const STRAPI_TOKEN = window.config.STRAPI_TOKEN || '';
 // Check if the token is available
+console.log(STRAPI_TOKEN)
 if (!STRAPI_TOKEN) {
     console.error('STRAPI_TOKEN is not set in the environment variables');
 }
@@ -8,7 +9,7 @@ let currentPage = 1;
 const postsPerPage = 10;
 
 function fetchBlogPosts(page = 1) {
-    fetch(`http://localhost:1337/api/blogs?pagination[page]=${page}&pagination[pageSize]=${postsPerPage}&populate=*`, {
+    fetch(`http://127.0.0.1:1337/api/blogs`, {
         headers: {
             'Authorization': `Bearer ${STRAPI_TOKEN}`
         }
