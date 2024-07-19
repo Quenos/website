@@ -77,6 +77,13 @@
     max-height: 400px;
 }
 
+.blog-post.full-post {
+    max-height: none;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .blog-post:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -109,6 +116,11 @@
 
 .blog-content {
     line-height: 1.6;
+}
+
+.full-post .blog-content {
+    max-height: none;
+    overflow: visible;
 }
 
 .blog-content h1,
@@ -169,6 +181,14 @@
     margin-right: 10px;
     margin-bottom: 10px;
     object-fit: cover;
+}
+
+.full-post .blog-content img,
+.full-post .blog-thumbnail {
+    max-width: 100%;
+    max-height: none;
+    float: none;
+    margin: 10px 0;
 }
 
 .blog-post-content {
