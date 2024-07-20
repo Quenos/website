@@ -10,7 +10,8 @@ const postsPerPage = 10;
 function fetchBlogPosts(page = 1) {
     fetch(`https://quenos.technology/api/blogs?pagination[page]=${page}&pagination[pageSize]=${postsPerPage}&populate=*`, {
         headers: {
-            'Authorization': `Bearer ${STRAPI_TOKEN}`
+            'Authorization': `Bearer ${STRAPI_TOKEN}`,
+            'Content-Type': 'application/json',
         }
     })
     .then(response => {
@@ -31,8 +32,8 @@ function fetchBlogPosts(page = 1) {
                 const article = document.createElement('article');
                 article.className = 'blog-post';
                 let thumbnailHtml = '';
-                if (post.attributes.thumbnail && post.attributes.thumbnail.data) {
-                    thumbnailHtml = `<img src="https://quenos.technology${post.attributes.thumbnail.data.attributes.url}" alt="${post.attributes.Title}"
+                if (post.attributes.Thumbnail && post.attributes.Thumbnail.data) {
+                    thumbnailHtml = `<img src="https://quenos.technology${post.attributes.Thumbnail.data.attributes.url}" alt="${post.attributes.Title}"
                     class="blog-thumbnail">`;
                 }
                 article.innerHTML = `
@@ -71,15 +72,16 @@ function fetchBlogPosts(page = 1) {
 function showFullPost(postId) {
     fetch(`https://quenos.technology/api/blogs/${postId}`, {
         headers: {
-            'Authorization': `Bearer ${STRAPI_TOKEN}`
+            'Authorization': `Bearer ${STRAPI_TOKEN}`,
+            'Content-Type': 'application/json',
         }
     })
     .then(response => response.json())
     .then(data => {
         const blogContent = document.getElementById('blog-content');
         let thumbnailHtml = '';
-        if (data.data.attributes.thumbnail && data.data.attributes.thumbnail.data) {
-            thumbnailHtml = `<img src="https://quenos.technology${data.data.attributes.thumbnail.data.attributes.url}" alt="${data.data.attributes.Title}"
+        if (data.data.attributes.Thumbnail && data.data.attributes.Thumbnail.data) {
+            thumbnailHtml = `<img src="https://quenos.technology${data.data.attributes.Thumbnail.data.attributes.url}" alt="${data.data.attributes.Title}"
             class="blog-thumbnail">`;
         }
         blogContent.innerHTML = `
@@ -106,7 +108,8 @@ function changePage(newPage) {
 function fetchLatestBlogPost() {
     fetch(`https://quenos.technology/api/blogs?pagination[page]=1&pagination[pageSize]=1&sort=publishedAt:desc&populate=*`, {
         headers: {
-            'Authorization': `Bearer ${STRAPI_TOKEN}`
+            'Authorization': `Bearer ${STRAPI_TOKEN}`,
+            'Content-Type': 'application/json',
         }
     })
     .then(response => {
@@ -121,8 +124,8 @@ function fetchLatestBlogPost() {
             const latestPostContainer = document.getElementById('latest-blog-post');
             if (latestPostContainer) {
                 let thumbnailHtml = '';
-                if (post.attributes.thumbnail && post.attributes.thumbnail.data) {
-                    thumbnailHtml = `<img src="https://quenos.technology${post.attributes.thumbnail.data.attributes.url}" alt="${post.attributes.Title}" class="blog-thumbnail">`;
+                if (post.attributes.Thumbnail && post.attributes.Thumbnail.data) {
+                    thumbnailHtml = `<img src="https://quenos.technology${post.attributes.Thumbnail.data.attributes.url}" alt="${post.attributes.Title}" class="blog-thumbnail">`;
                 }
                 latestPostContainer.innerHTML = `
                     <div class="summary">
