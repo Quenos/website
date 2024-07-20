@@ -183,14 +183,24 @@
     object-fit: cover;
 }
 
-.full-post .blog-content img,
 .full-post .blog-thumbnail {
     max-width: 200px;
     max-height: 200px;
     float: right;
     margin: 0 0 10px 10px;
     object-fit: cover;
-    shape-outside: margin-box;
+    shape-outside: url(https://quenos.technology${post.attributes.Thumbnail.data.attributes.url});
+}
+
+.full-post .blog-content {
+    overflow: auto;
+}
+
+.full-post .blog-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
 }
 
 .blog-post-content {
