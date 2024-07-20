@@ -70,7 +70,7 @@ function fetchBlogPosts(page = 1) {
 }
 
 function showFullPost(postId) {
-    fetch(`https://quenos.technology/api/blogs/${postId}`, {
+    fetch(`https://quenos.technology/api/blogs/${postId}?populate=*`, {
         headers: {
             'Authorization': `Bearer ${STRAPI_TOKEN}`,
             'Content-Type': 'application/json',
@@ -79,8 +79,11 @@ function showFullPost(postId) {
     .then(response => response.json())
     .then(data => {
         const blogContent = document.getElementById('blog-content');
+        const post = data.data.attributes
         let thumbnailHtml = '';
         if (data.data.attributes.Thumbnail && data.data.attributes.Thumbnail.data) {
+            const post = data.data
+            console.log(post)
             thumbnailHtml = `<img src="https://quenos.technology${post.attributes.Thumbnail.data.attributes.url}" alt="${post.attributes.Title}" class="blog-thumbnail">`;
         }
         blogContent.innerHTML = `
