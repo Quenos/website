@@ -81,8 +81,7 @@ function showFullPost(postId) {
         const blogContent = document.getElementById('blog-content');
         let thumbnailHtml = '';
         if (data.data.attributes.Thumbnail && data.data.attributes.Thumbnail.data) {
-            thumbnailHtml = `<img src="https://quenos.technology${data.data.attributes.Thumbnail.data.attributes.url}" alt="${data.data.attributes.Title}"
-            class="blog-thumbnail">`;
+            thumbnailHtml = `<img src="https://quenos.technology${post.attributes.Thumbnail.data.attributes.url}" alt="${post.attributes.Title}" class="blog-thumbnail">`;
         }
         blogContent.innerHTML = `
             <article class="blog-post full-post">
