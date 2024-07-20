@@ -86,9 +86,9 @@ function showFullPost(postId) {
         }
         blogContent.innerHTML = `
             <article class="blog-post full-post">
-                ${thumbnailHtml}
                 <h2>${data.data.attributes.Title}</h2>
                 <p class="blog-date">Published on ${new Date(data.data.attributes.publishedAt).toLocaleDateString()}</p>
+                ${thumbnailHtml}
                 <div class="blog-content">${marked.parse(data.data.attributes.Content)}</div>
                 <button onclick="fetchBlogPosts(${currentPage})">Back to List</button>
             </article>
