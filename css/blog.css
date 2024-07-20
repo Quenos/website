@@ -185,10 +185,11 @@
 
 .full-post .blog-content img,
 .full-post .blog-thumbnail {
-    max-width: 100%;
-    max-height: none;
-    float: none;
-    margin: 10px 0;
+    max-width: 300px;
+    max-height: 300px;
+    float: right;
+    margin: 0 0 10px 10px;
+    object-fit: cover;
 }
 
 .blog-post-content {
