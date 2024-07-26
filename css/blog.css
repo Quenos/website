@@ -196,7 +196,7 @@
     overflow: auto;
 }
 
-.full-post .blog-content img {
+.full-post .blog-content img:not(.full-width-image) {
     max-width: 100%;
     height: auto;
     display: block;
@@ -206,7 +206,7 @@
 
 .full-post .blog-content img.full-width-image {
     width: 100%;
-    max-width: 100%;
+    max-width: none;
     height: auto;
     object-fit: contain;
     margin: 20px 0;
