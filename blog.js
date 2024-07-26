@@ -99,18 +99,7 @@ function showFullPost(postId) {
                 <div class="blog-content">${processedContent}</div>
                 <button onclick="fetchBlogPosts(${currentPage})">Back to List</button>
             </article>
-            <div class="engagement-section">
-                <h3>Comments</h3>
-                <div id="comments-container"></div>
-                <h4>Add a Comment</h4>
-                <form id="comment-form">
-                    <input type="text" id="comment-name" placeholder="Your Name" required>
-                    <textarea id="comment-content" placeholder="Your Comment" required></textarea>
-                    <button type="button" onclick="submitComment(${postId})">Submit Comment</button>
-                </form>
-            </div>
         `;
-        loadComments(postId);
     })
     .catch(error => {
         console.error('Error:', error);
