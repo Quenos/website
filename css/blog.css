@@ -173,7 +173,6 @@
     text-decoration: underline;
 }
 
-.blog-content img,
 .blog-thumbnail {
     max-width: 150px;
     max-height: 150px;
@@ -196,21 +195,11 @@
     overflow: auto;
 }
 
-.full-post .blog-content img:not(.full-width-image) {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    float: none;
-}
-
-.full-post .blog-content img.full-width-image {
+.full-post .blog-content img {
     width: 100%;
-    max-width: none;
     height: auto;
-    object-fit: contain;
-    margin: 20px 0;
     display: block;
+    margin: 20px 0;
     float: none;
 }
 
