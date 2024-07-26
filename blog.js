@@ -87,7 +87,7 @@ function showFullPost(postId) {
 
         // Process the content to replace Markdown image links with full-width img tags
         const processedContent = marked.parse(post.Content).replace(
-            /!\[.*?\]\((.*?)\)/g,
+            /!\[.*?\]\((https:\/\/quenos\.technology\/uploads\/.*?)\)/g,
             '<img src="$1" alt="Blog image" class="full-width-image">'
         );
 
