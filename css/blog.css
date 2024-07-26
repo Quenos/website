@@ -229,3 +229,50 @@
     display: table;
     clear: both;
 }
+
+.engagement-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f0f5f4;
+    border-radius: 10px;
+}
+
+.engagement-section h3,
+.engagement-section h4 {
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+#comments-container {
+    margin-bottom: 30px;
+}
+
+.comment {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#comment-form input,
+#comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#comment-form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#comment-form button:hover {
+    background-color: #0056b3;
+}
