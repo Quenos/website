@@ -201,14 +201,17 @@
     height: auto;
     display: block;
     margin: 20px auto;
+    float: none;
 }
 
 .full-post .blog-content img.full-width-image {
     width: 100%;
+    max-width: 100%;
     height: auto;
     object-fit: contain;
     margin: 20px 0;
     display: block;
+    float: none;
 }
 
 .blog-post-content {
