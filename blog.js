@@ -79,19 +79,24 @@ function showFullPost(postId) {
     .then(response => response.json())
     .then(data => {
         const blogContent = document.getElementById('blog-content');
-        const post = data.data.attributes
+        const post = data.data.attributes;
         let thumbnailHtml = '';
-        if (data.data.attributes.Thumbnail && data.data.attributes.Thumbnail.data) {
-            const post = data.data
-            console.log(post)
-            thumbnailHtml = `<img src="https://quenos.technology${post.attributes.Thumbnail.data.attributes.url}" alt="${post.attributes.Title}" class="blog-thumbnail">`;
+        if (post.Thumbnail && post.Thumbnail.data) {
+            thumbnailHtml = `<img src="https://quenos.technology${post.Thumbnail.data.attributes.url}" alt="${post.Title}" class="blog-thumbnail">`;
         }
+
+        // Process the content to replace Markdown image links with full-width img tags
+        const processedContent = marked.parse(post.Content).replace(
+            /!\[.*?\]\((.*?)\)/g,
+            '<img src="$1" alt="Blog image" class="full-width-image">'
+        );
+
         blogContent.innerHTML = `
             <article class="blog-post full-post">
-                <h2>${data.data.attributes.Title}</h2>
-                <p class="blog-date">Published on ${new Date(data.data.attributes.publishedAt).toLocaleDateString()}</p>
+                <h2>${post.Title}</h2>
+                <p class="blog-date">Published on ${new Date(post.publishedAt).toLocaleDateString()}</p>
                 ${thumbnailHtml}
-                <div class="blog-content">${marked.parse(data.data.attributes.Content)}</div>
+                <div class="blog-content">${processedContent}</div>
                 <button onclick="fetchBlogPosts(${currentPage})">Back to List</button>
             </article>
         `;
