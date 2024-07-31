@@ -16,7 +16,7 @@
     <script src="blog.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body onload="includeHTML(); fetchLatestBlogPost(); parseLatestBlogPost();">
+<body onload="includeHTML(); fetchLatestBlogPost();">
     <header w3-include-html="header.html"></header>
     <main>
         <section class="banner">
@@ -80,15 +80,25 @@
     <footer w3-include-html="footer.html"></footer>
     <script>
         function parseLatestBlogPost() {
-            setTimeout(() => {
-                const titleElement = document.getElementById('latest-blog-title');
-                const contentElement = document.getElementById('latest-blog-content');
-                if (titleElement && contentElement) {
-                    titleElement.innerHTML = marked.parse(titleElement.textContent);
-                    contentElement.innerHTML = marked.parse(contentElement.textContent);
-                }
-            }, 1000); // Wait for 1 second to ensure content is loaded
+            const titleElement = document.getElementById('latest-blog-title');
+            const contentElement = document.getElementById('latest-blog-content');
+            if (titleElement && contentElement) {
+                titleElement.innerHTML = marked.parse(titleElement.textContent);
+                contentElement.innerHTML = marked.parse(contentElement.textContent);
+            }
         }
+
+        // Use MutationObserver to detect when the latest blog post content is loaded
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'childList' && mutation.target.id === 'latest-blog-post') {
+                    parseLatestBlogPost();
+                    observer.disconnect(); // Stop observing once content is loaded and parsed
+                }
+            });
+        });
+
+        observer.observe(document.getElementById('latest-blog-post'), { childList: true, subtree: true });
     </script>
 </body>
 </html>

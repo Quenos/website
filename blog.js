@@ -142,7 +142,6 @@ function fetchLatestBlogPost() {
                         <div id="latest-blog-content">${post.attributes.Summary}</div>
                     </div>
                 `;
-                parseLatestBlogPost();
             }
         }
     })
