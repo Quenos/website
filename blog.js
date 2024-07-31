@@ -136,12 +136,13 @@ function fetchLatestBlogPost() {
                 }
                 latestPostContainer.innerHTML = `
                     <div class="summary">
-                        <h3><a href="blog.html">${post.attributes.Title}</a></h3>
+                        <h3><a href="blog.html" id="latest-blog-title">${post.attributes.Title}</a></h3>
                         ${thumbnailHtml}
                         <p class="blog-date">Published on ${new Date(post.attributes.publishedAt).toLocaleDateString()}</p>
-                        <p>${post.attributes.Summary}</p>
+                        <div id="latest-blog-content">${post.attributes.Summary}</div>
                     </div>
                 `;
+                parseLatestBlogPost();
             }
         }
     })
@@ -152,6 +153,15 @@ function fetchLatestBlogPost() {
             latestPostContainer.innerHTML = '<p>Error loading latest blog post. Please try again later.</p>';
         }
     });
+}
+
+function parseLatestBlogPost() {
+    const titleElement = document.getElementById('latest-blog-title');
+    const contentElement = document.getElementById('latest-blog-content');
+    if (titleElement && contentElement) {
+        titleElement.innerHTML = marked.parse(titleElement.textContent);
+        contentElement.innerHTML = marked.parse(contentElement.textContent);
+    }
 }
 
 // This function will be called when the body loads in index.html
